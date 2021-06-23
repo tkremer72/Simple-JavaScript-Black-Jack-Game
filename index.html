@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="description" content="JavaScript Blackjack game. Play 21 against a computer.">
+  <meta name="keywords" content="Babel, Bootstrap, CSS, ESLint, Flexbox, HTML, JavaScript, jQuery, Responsive, Basic, Template">
+  <meta name="author" content="Thomas E. Kremer">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!-- Bring in google fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates&display=swap" rel="stylesheet">
+  
+   <!-- Bring in bootstrap  -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="assets/styles/blackjack.css">
+  <title>JavaScript - BlackJack</title>
+</head>
+<body>
+  <div id="blackjack">
+    <nav class="navbar">
+      <div class="logo-container">
+            <a href="#webtek-info">
+                 <img src="assets/images/seethrough_1.png" alt="seethrough_1" class="logo-image">
+                 <span class="logo-text">Webtek</span>
+            </a>
+     </div>
+
+      <ul class="nav-list" id="navi-list">
+           <li class="list-item" hidden>
+                <a href="#about-me">About Us</a>
+           </li>
+           <li class="list-item" hidden>
+                <a href="#contact">Contact</a>
+           </li>
+           <li class="list-item" hidden>
+                <a href="#contact">Support</a>
+           </li>
+      </ul>
+      <!-- <div class="menu" id="toggle-menu" onclick="toggleMenu()"> -->
+        <div class="menu" id="toggle-menu">
+           <div class="menu-line"></div>
+           <div class="menu-line"></div>
+           <div class="menu-line"></div>
+      </div>
+ </nav>
+
+    <header>
+    <h1>JS BlackJack Game</h1>
+    <p hidden>Mobile users may need to refresh the page to start a new game.</p>
+  </header>
+
+<div class="container-fluid">
+  <div class="status hidden">&nbsp;</div>
+  <div class="dealer">
+    <div class="hand"></div>
+    <div class="score hidden"></div>
+  </div>
+  <div class="player">
+    <div class="hand"></div>
+    <div class="score"></div>
+  </div>
+  <div class="buttons">
+    <button class="hit-me">Hit Me</button>
+    <button class="stay">Stay</button>
+    <button class="restart">Restart</button>
+  </div>
+</div>
+
+    <div class="footer-container-fluid">
+      <div class="logo-copyright">
+           <img src="assets/images/seethrough_1.png" alt="seethrough_1" class="footer-logo">
+           <span class="footer-text">WebTek</span>
+      </div>
+     <div class="webmaster-contact" id="webtek-info">
+          <span class="footer-info">This page created and designed by</span>
+          <a href="mailto: tkremer@nc.rr.com" class="webmaster" id="contact">Thomas E. Kremer</a>
+     </div>
+ </div>
+  </div>
+  <script src="dist/build.js" defer></script>
+</body>
+</html>
+

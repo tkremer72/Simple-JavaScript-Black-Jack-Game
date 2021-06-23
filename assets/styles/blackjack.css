@@ -1,0 +1,527 @@
+/* Resetting the page css properties */
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+  background-color: #FFFFFF;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+#blackjack {
+  margin-bottom: 125px;
+}
+.logo-image {
+  width: 55px;
+  height: auto;
+}
+.logo-text {
+  font-family: Montserrat Alternates;
+  font-weight: 600;
+  font-style: none;
+  font-size: 36px;
+  line-height: 32px;
+  letter-spacing: 0.03em;
+}
+.navbar a{
+  text-decoration: none;
+  color: rgba(0, 0, 0, 1);
+}
+.navbar a:hover {
+  color: #94A2FB;
+}
+.navbar {
+  align-items: center;
+  background-color: #FFFFFF;
+  color: rgba(0, 0, 0, 1);
+  display: flex;
+  font-family: Poppins;
+  font-size: 25px;
+  justify-content: space-around;
+}
+
+.nav-list {
+  list-style-type: none;
+}
+
+.nav-list .list-item {
+  display: inline-block;
+  padding: 20px 10px;
+}
+/* Hide menu on larger screens */
+.menu {
+  display: none;
+}
+.menu-line {
+  background-color: #94A2FB;
+  width: 25px;
+  height: 3px;
+  margin-bottom: 4px;
+}
+
+/* Style the footer and footer elements */
+   .footer-logo {
+     margin-top: 0px;
+     margin-bottom: 10px;
+     width: 55px;
+     height: 55px;
+}
+/* .copyright {
+  font-family: Montserrat Alternates;
+  font-weight: 600;
+  font-size: 25px;
+} */
+.footer-text {
+  margin-top: 25px;
+  font-family: Montserrat Alternates;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 21px;
+}
+.webmaster {
+  text-decoration: none;
+}
+.footer-info {
+  width: 100%;
+  font-family: Poppins;
+  font-weight: 200;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 32px;
+  letter-spacing: 0.03em;
+}
+.webmaster-contact {
+  margin-top: 13px;
+}
+.footer-container-fluid {
+     display: flex;
+     justify-content: space-evenly;
+     position: fixed;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     background-color: #FFFFFF;
+     text-align: center;
+}
+
+
+
+/* Media query for smaller devices, hamburger menu */
+@media all and (max-width: 480px) {
+  /* Center the main content, justify the text on small screens */
+  .main-content {
+    padding-bottom: 125px;
+    text-align: justify;
+  }
+/* Style the navigation and the header */
+  .navbar {
+    flex-direction: column;
+    position: relative;
+  }
+  .logo-container {
+    width: 100%;
+    margin-left: 75px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+/* Show menu */
+.menu {
+  display: none;
+  position: absolute;
+  right: 25px;
+  top: 30px;
+}
+.nav-list {
+  list-style-type: none;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  display: none;
+}
+.nav-list .list-item {
+  display: block;
+  border-top: 1px solid black;
+  padding: 10px;
+}
+/* Style the footer container and information */
+.footer-container-fluid {
+  padding: 10px;
+  flex-direction: column;
+  width: 100%;
+  height: 125px;
+}
+/* Style the logo and logo text */
+.footer-logo {
+  margin-top: 5px;
+  width: 45px;
+  height: auto;
+}
+.footer-text {
+  font-family: Montserrat Alternates;
+  font-weight: 600;
+  font-style: none;
+  font-size: 28px;
+  line-height: 32px;
+  letter-spacing: 0.03em;
+}
+.webmaster-contact {
+  padding: 0;
+  margin: 0;
+}
+.footer-info {
+  margin: 0;
+  padding: 0;
+  font-family: Poppins;
+  font-weight: 200;
+  font-size: 17px;
+  line-height: 21px;
+  letter-spacing: 0.03em;
+}
+.webmaster {
+  font-family: Poppins;
+  font-weight: 200;
+  font-size: 16px;
+  color: #94A2FB;
+}
+/* Show the hamburger menu  */
+.active {
+  display: block;
+}
+}
+
+
+   .hand {
+     display: flex;
+     justify-content: center;
+     transition: all 0.6s;
+   }
+   .hand.adding {
+     transition: none;
+     transform: translate(36px);
+   }
+   .hand.adding .card:last-child {
+     transform: translate(1150px);
+     /*opacity: 0;*/
+   }
+   .card {
+     margin: 0 5px;
+     border: 3px solid darkslategrey;
+     box-shadow: 0px 1px 3px #ccc;
+     padding: 5px;
+     border-radius: 6px;
+     color: black;
+     font-family: Poppins;
+     font-size: 36px;
+     width: 100px;
+     height: 155px;
+     position: center;
+     transition: all 0.6s;
+     transform-style: preserve-3d;
+   }
+   .card.flipped {
+     transform: rotateY(180deg);
+   }
+   .card.added {
+     transform: translate(50px);
+     /*opacity: 0;*/
+   }
+   .card .back {
+     background: #47B77E;
+     box-shadow: 0 0 25px #09A372 inset;
+     margin: 3px;
+   }
+   .card .front {
+     transform: rotateY(180deg);
+   }
+   .card .back, .card .front {
+     backface-visibility: hidden;
+     position: absolute;
+     top: 2px; left: 2px; right: 2px; bottom: 2px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   }
+   .diamonds  .front:before,
+   .diamonds .front:after,
+   .hearts .front:before,
+   .hearts .front:after {
+     color: red;
+   }
+   .card .front:before, .card .front:after {
+     content: attr(data-suit);
+     position: absolute;
+     font-size: 35px;
+   }
+   .card .front:before {
+     top: 0;
+     left: 5px;
+   }
+   .card .front:after {
+     bottom: 0;
+     right: 5px;
+   }
+   .score {
+     text-align: center;
+     font-size: 28px;
+     font-weight: bold;
+     margin-top: 15px;
+     transition: all 0.6s;
+     color: darkslateblue;
+   }
+   .score:before {
+     content: 'Score: ';
+     color: slategrey;
+   }
+   .score.blackjack:before {
+     content: 'Blackjack: ';
+   }
+   .score.bust:before {
+     content: 'Bust: ';
+     color: #D6100D;
+   }
+   .dealer, .player {
+     border: 2px solid black;
+     margin: 30px 150px;
+     padding: 20px;
+     padding-top: 50px;
+     position: relative;
+     max-width: 500px;
+   }
+   .dealer:before, .player:before {
+     content: 'Dealer';
+     position: absolute;
+     top: -10px;
+     background: #FFFFFF;
+     color: black;
+     font-size: 28px;
+     font-weight: bold;
+     padding: 0 10px;
+   }
+   .player:before {
+     content: 'You';
+   }
+   .buttons {
+     margin: 10px 150px;
+     padding: 0 20px;
+     max-width: 500px;
+     display: flex;
+     justify-content: center;
+     transition: all 0.6s;
+   }
+   
+   h1 {
+     color: darkslateblue;
+    display: flex;
+    font-size: 3rem;
+    justify-content: center;
+    text-align: center;
+   }
+   p {
+     text-align: center;
+     font-size: 2rem;
+     font-weight: bold;
+   }
+   .hidden {
+     opacity: 0;
+     pointer-events: none;
+   }
+   button {
+     background: #e3e9f3;
+     border: none;
+     border-bottom: 3px solid darkslategrey;
+     color: darkslateblue;
+     outline: none;
+     padding: 10px;
+     font-size: 24px;
+     border-radius: 4px;
+     width: 100px;
+     margin: 0 5px;
+     cursor: pointer;
+     box-shadow: 0px 0px 30px #f3f9ff inset;
+   }
+   button:hover {
+     box-shadow: 0px 0px 30px #65CFFB inset;
+     background: #4FC0FC;
+     color: #3866AA;
+   }
+   .status {
+     margin: 20px 50px;
+     padding: 0 20px;
+     max-width: 500px;
+     text-align: center;
+     font-size: 36px;
+     font-weight: medium;
+     transition: all 0.6s;
+   }
+   @media only screen 
+   and (min-device-width: 320px) 
+   and (max-device-width: 568px)
+   and (-webkit-min-device-pixel-ratio: 2) {
+ body {
+  background-color: #FFFFFF;
+  display: flex;
+  margin: 0;
+  justify-content: center; 
+}
+.hand {
+  display: flex;
+  justify-content: center;
+  transition: all 0.6s;
+}
+.hand.adding {
+  transition: none;
+  transform: translate(18px);
+}
+.hand.adding .card:last-child {
+  transform: translate(1120px);
+  /*opacity: 0;*/
+}
+.card {
+  margin: 0 5px;
+  border: 3px solid darkslategrey;
+  box-shadow: 0px 1px 3px #ccc;
+  padding: 5px;
+  border-radius: 2px;
+  color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 25px;
+  font-weight: bold;
+  width: 65px;
+  height: 95px;
+  position: relative;
+  transition: all 0.6s;
+  transform-style: preserve-3d;
+}
+.card.flipped {
+  transform: rotateY(180deg);
+}
+.card.added {
+  transform: translate(10px);
+  /*opacity: 0;*/
+}
+.card .back {
+  background: #47B77E;
+  box-shadow: 0 0 25px #09A372 inset;
+  margin: 3px;
+}
+.card .front {
+  transform: rotateY(180deg);
+}
+.card .back, .card .front {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 2px; left: 2px; right: 2px; bottom: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.diamonds  .front:before,
+.diamonds .front:after,
+.hearts .front:before,
+.hearts .front:after {
+  color: red;
+}
+.card .front:before, .card .front:after {
+  content: attr(data-suit);
+  position: absolute;
+  font-size: 18px;
+}
+.card .front:before {
+  top: 0;
+  left: 5px;
+}
+.card .front:after {
+  bottom: 0;
+  right: 5px;
+}
+.score {
+  text-align: center;
+  font-size: 26px;
+  margin-top: 15px;
+  transition: all 0.6s;
+}
+.score:before {
+  content: 'Score: ';
+  color: #999;
+}
+.score.blackjack:before {
+  content: 'Blackjack: ';
+}
+.score.bust:before {
+  content: 'Bust: ';
+  color: #D6100D;
+}
+.dealer, .player {
+  border: 1px solid #ddd;
+  margin: 30px 50px;
+  padding: 20px;
+  padding-top: 50px;
+  position: relative;
+  max-width: 500px;
+}
+.dealer:before, .player:before {
+  content: 'Dealer';
+  position: absolute;
+  top: -10px;
+  background: #FFFFFF;
+  font-size: 28px;
+  padding: 0 10px;
+}
+.player:before {
+  content: 'You';
+}
+.buttons {
+  margin: auto;
+  padding: 0 20px;
+  max-width: 300px;
+  display: flex;
+  height: auto;
+  justify-content: start;
+  transition: all 0.6s;
+}
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+h1 {
+  color: darkslateblue;
+ display: flex;
+ font-size: 3rem;
+ justify-content: center;
+ text-align: center;
+}
+p {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+button {
+  background: #e3e9f3;
+  border: none;
+  border-bottom: 3px solid darkslategrey;
+  color: #636973;
+  outline: none;
+  padding: 5px;
+  font-size: 24px;
+  border-radius: 4px;
+  width: 85px;
+  cursor: pointer;
+  box-shadow: 0px 0px 30px #f3f9ff inset;
+}
+button:hover {
+  box-shadow: 0px 0px 30px #65CFFB inset;
+  background: #4FC0FC;
+  color: #3866AA;
+}
+.status {
+  margin: 20px 50px;
+  padding: 0 20px;
+  max-width: 500px;
+  text-align: center;
+  font-size: 26px;
+  transition: all 0.6s;
+}
+ }
